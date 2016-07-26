@@ -1,0 +1,10 @@
+stages:
+  - test
+
+test-infrastructure:
+  stage: test
+  script:
+    - .\build.ps1 -task Default
+  tags:
+    - windows
+    - powershell5
