@@ -1,7 +1,7 @@
 #require -modules poshspec
 
 param(
-    $FreeRamMbytesThreshold = 12000,
+    $FreeRamMbytesThreshold = 500,
     $FreeSystemPageTableEntriesThreshold = 5000
 )
 
