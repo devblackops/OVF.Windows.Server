@@ -1,5 +1,3 @@
-[![build status](http://gitlab.columbia.csc/SSE/OVF.Windows.Server/badges/master/build.svg)](http://gitlab.columbia.csc/SSE/OVF.Windows.Server/commits/master)
-
 # OVF.Windows.Server
 
 ## Overview
