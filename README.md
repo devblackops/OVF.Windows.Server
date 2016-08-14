@@ -27,3 +27,6 @@ operation of a basic Windows server. These Pester tests have been packaged into 
   * Availability
     * Critical Windows services are running.
 
+## Example Output
+
+![Example Pester output](/Media/example.png)
