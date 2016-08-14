@@ -18,11 +18,7 @@ Describe 'Module manifest' {
 
         It "has a valid name in the manifest" {
             $script:manifest.Name | Should Be $env:BHProjectName
-        }
-
-        It 'has a valid root module' {
-            $script:manifest.RootModule | Should Be "$moduleName.psm1"
-        }
+        }        
 
         It "has a valid version in the manifest" {
             $script:manifest.Version -as [Version] | Should Not BeNullOrEmpty
