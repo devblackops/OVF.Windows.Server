@@ -30,7 +30,7 @@ CompanyName = 'Community'
 Copyright = '(c) 2016 Brandon Olin. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'OVF module to test Windows Server operation'
+Description = 'OVF module to test basic Windows Server operation using Pester tests'
 
 # Minimum version of the Windows PowerShell engine required by this module
 # PowerShellVersion = ''
