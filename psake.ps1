@@ -1,7 +1,7 @@
 # Define global variables used by tasks
 properties {
     $projectRoot = $ENV:BHProjectPath
-    $sut = "$projectRoot\OVF.Windows.Server"
+    $sut = $env:BHProjectName
     if(-not $projectRoot) {
         $projectRoot = $PSScriptRoot
     }
@@ -43,6 +43,24 @@ task Pester -Depends Init {
     }
 }
 
-task Deploy {
-    Invoke-PSDeploy -Path .\ovf.psdeploy.ps1 -Verbose -Force
+task Deploy -depends Test {
+    # Gate deployment
+    if(
+        $ENV:BHBuildSystem -ne 'Unknown' -and
+        $ENV:BHBranchName -eq "master" -and
+        $ENV:BHCommitMessage -match '!deploy'
+    ) {
+        $params = @{
+            Path = "$projectRoot\module.psdeploy.ps1"
+            Force = $true
+            Recurse = $false
+        }
+
+        Invoke-PSDeploy @Params
+    } else {
+        "Skipping deployment: To deploy, ensure that...`n" +
+        "`t* You are in a known build system (Current: $ENV:BHBuildSystem)`n" +
+        "`t* You are committing to the master branch (Current: $ENV:BHBranchName) `n" +
+        "`t* Your commit message includes !deploy (Current: $ENV:BHCommitMessage)"
+    }
 }
