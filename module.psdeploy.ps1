@@ -1,5 +1,5 @@
 if($ENV:BHProjectName -and $ENV:BHProjectName.Count -eq 1) {
-    Deploy OVF-Module {        
+    Deploy OVF-Module {
         By PSGalleryModule Artifactory {
             FromSource $ENV:BHProjectName
             To PSGallery
@@ -7,6 +7,6 @@ if($ENV:BHProjectName -and $ENV:BHProjectName.Count -eq 1) {
             WithOptions @{
                 ApiKey = $env:PSGalleryApiKey
             }
-        }       
+        }
     }
 }

@@ -33,7 +33,7 @@ task Analyze -Depends Init {
     }
 }
 
-task Pester -Depends Init {   
+task Pester -Depends Init {
     if(-not $ENV:BHProjectPath) {
         Set-BuildEnvironment -Path $PSScriptRoot\..
     }

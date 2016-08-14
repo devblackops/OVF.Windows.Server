@@ -11,6 +11,6 @@ describe 'Network Adapters' {
         $adapters = Get-NetAdapter -Name $Interfaces -Physical
         $adapters | % {
             interface $_.Name Status { should be up }
-        }        
+        }
     }
 }
