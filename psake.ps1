@@ -1,10 +1,11 @@
 # Define global variables used by tasks
 properties {
     $projectRoot = $ENV:BHProjectPath
-    $sut = $env:BHProjectName
     if(-not $projectRoot) {
         $projectRoot = $PSScriptRoot
     }
+    $sut = $env:BHProjectName
+    $tests = "$projectRoot\Tests"   
 }
 
 task Default -depends Test
@@ -14,7 +15,10 @@ Task Init {
     Set-Location $ProjectRoot
     "Build System Details:"
     Get-Item ENV:BH*
-    "`n"
+
+    $modules = 'Pester', 'PSDeploy', 'PSScriptAnalyzer'
+    Install-Module $modules -Confirm:$false
+    Import-Module $modules -Verbose:$false -Force
 }
 
 # Test entire project
