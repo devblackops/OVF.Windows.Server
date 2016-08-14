@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '0.1.0'
+ModuleVersion = '1.0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -21,10 +21,10 @@ ModuleVersion = '0.1.0'
 GUID = '36fa5e07-7ec6-44df-b674-b0d8da807c9c'
 
 # Author of this module
-Author = 'Brandon Olin'
+Author = 'Brandon Olin (@devblackops)'
 
 # Company or vendor of this module
-#CompanyName = ''
+CompanyName = 'Community'
 
 # Copyright statement for this module
 Copyright = '(c) 2016 Brandon Olin. All rights reserved.'
@@ -95,13 +95,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @('OVF', 'Pester', 'Windows', 'Server', 'Operation', 'Validation')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://raw.githubusercontent.com/devblackops/OVF.Windows.Server/master/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/devblackops/OVF.Windows.Server'
 
         # A URL to an icon representing this module.
         # IconUri = ''
