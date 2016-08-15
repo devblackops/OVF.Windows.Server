@@ -11,13 +11,9 @@ Import-Module -Name poshspec -Verbose:$false -ErrorAction Stop
 
 describe 'Logical Disks' {
 
-    $vols = Get-Volume | Where DriveType -eq 'Fixed'
+    $vols = Get-Volume | Where-Object { $_.DriveType -eq 'Fixed' -and $_.FileSystemLabel -ne 'System Reserved' }
     context 'Availablity' {
         $vols | % {
-            it "Volume [$($_.DriveLetter)] is operational" {
-                $_.OperationalStatus | should be 'OK'
-            }
-
             it "Volume [$($_.DriveLetter)] is healthy" {
                 $_.HealthStatus | should be 'Healthy'
             }
