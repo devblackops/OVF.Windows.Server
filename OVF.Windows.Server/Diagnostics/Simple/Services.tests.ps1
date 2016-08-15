@@ -4,7 +4,6 @@ Import-Module -Name poshspec -Verbose:$false -ErrorAction Stop
 
 describe 'Operating System' {
     context 'Availability' {
-        service Browser status { should be running }
         service DHCP status { should be running }
         service DNSCache status { should be running }
         service Eventlog status { should be running }
